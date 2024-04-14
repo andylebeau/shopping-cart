@@ -1,0 +1,11 @@
+.error-page {
+  max-width: 34rem;
+  text-align: center;
+  margin: auto;
+  margin-top: 4rem;
+}
+
+.error-message {
+  font-weight: 500;
+  color: brown;
+}
