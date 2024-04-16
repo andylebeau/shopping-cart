@@ -8,12 +8,12 @@ import CartContextProvider from '../components/CartContextPorvider';
 
 export const Shop = () => {
   const [loading, setLoading] = useState(false);
-  const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState('all categories');
   let filterProducts;
-  const { shoppingCart, setShoppingCart } = useContext(CartContext);
+  const { products, setProducts, shoppingCart, setShoppingCart } =
+    useContext(CartContext);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -38,7 +38,7 @@ export const Shop = () => {
     return () => {
       setLoading(true);
     };
-  }, [loading]);
+  }, [loading, setProducts]);
 
   if (!loading) {
     return <section className="sub-header">Loading...</section>;

@@ -12,6 +12,7 @@ const CART_SVG = (
 export const Header = () => {
   const { shoppingCart } = useContext(CartContext);
   const cartCount = Object.values(shoppingCart).reduce((a, c) => a + c, 0);
+
   return (
     <nav>
       <Link to="/" className="logo">
@@ -25,12 +26,14 @@ export const Header = () => {
             </NavLink>
           </li>
         </ul>
-        <div className="cart-svg">{CART_SVG}</div>
-        <div
-          className={cartCount ? 'cart-counter' : 'cart-counter  visibility'}
-        >
-          {cartCount}
-        </div>
+        <Link to="/checkout">
+          <div className="cart-svg">{CART_SVG}</div>
+          <div
+            className={cartCount ? 'cart-counter' : 'cart-counter  visibility'}
+          >
+            {cartCount}
+          </div>
+        </Link>
       </div>
     </nav>
   );
