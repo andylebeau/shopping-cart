@@ -10,8 +10,7 @@ const CART_SVG = (
 );
 
 export const Header = () => {
-  const { shoppingCart } = useContext(CartContext);
-  const cartCount = Object.values(shoppingCart).reduce((a, c) => a + c, 0);
+  const { cartCount } = useContext(CartContext);
 
   return (
     <nav>

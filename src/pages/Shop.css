@@ -1,10 +1,3 @@
-.sub-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem;
-}
-
 .category-container {
   display: flex;
   gap: 1rem;
@@ -27,7 +20,7 @@
 
 .product-card {
   width: 280px;
-  height: 480px;
+  height: 440px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,6 +37,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0.75rem;
 }
 
 img {
