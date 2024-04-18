@@ -15,7 +15,7 @@ export const Header = () => {
   return (
     <nav>
       <Link to="/" className="logo">
-        Mirage Mart
+        <h1>Mirage Mart</h1>
       </Link>
       <div className="nav-right">
         <ul>

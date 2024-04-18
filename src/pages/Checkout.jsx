@@ -8,7 +8,6 @@ import './Checkout.css';
 export const Checkout = () => {
   const { products, shoppingCart, cartCount, getCartTotal } =
     useContext(CartContext);
-  console.log(cartCount);
   const cartTotal = formatCurrency(getCartTotal());
   return (
     <>

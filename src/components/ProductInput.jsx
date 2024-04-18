@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const ProductInput = ({ shoppingCart, setShoppingCart, productId }) => {
   const [quantity, setQuantity] = useState(shoppingCart[productId] || 0);
@@ -15,7 +16,6 @@ export const ProductInput = ({ shoppingCart, setShoppingCart, productId }) => {
     } else {
       setShoppingCart({ ...shoppingCart, [productId]: quantity - 1 });
       setQuantity(quantity - 1);
-      console.log(shoppingCart);
     }
   };
 
@@ -34,4 +34,10 @@ export const ProductInput = ({ shoppingCart, setShoppingCart, productId }) => {
       )}
     </section>
   );
+};
+
+ProductInput.propTypes = {
+  shoppingCart: PropTypes.object,
+  setShoppingCart: PropTypes.func,
+  productId: PropTypes.number,
 };

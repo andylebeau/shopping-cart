@@ -7,7 +7,7 @@ import CartContext from '../components/CartContext';
 import CartContextProvider from '../components/CartContextPorvider';
 
 export const Shop = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [categories, setCategories] = useState([]);
   const [category, setCategory] = useState('all categories');
@@ -40,18 +40,18 @@ export const Shop = () => {
     };
   }, [loading, setProducts]);
 
-  if (!loading) {
-    return <section className="sub-header">Loading...</section>;
-  }
-
-  if (error) return <ErrorPage error={error} />;
-
   if (category !== 'all categories') {
     filterProducts = products.filter(
       (product) => product.category === category
     );
   } else {
     filterProducts = [...products];
+  }
+
+  if (error) return <ErrorPage error={error} />;
+
+  if (!loading) {
+    return <section className="sub-header">Loading...</section>;
   }
 
   return (
