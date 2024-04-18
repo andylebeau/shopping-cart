@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import CartContext from './CartContext';
+import PropTypes from 'prop-types';
 
 const CartContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
@@ -32,6 +33,10 @@ const CartContextProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
+};
+
+CartContextProvider.propTypes = {
+  children: PropTypes.array,
 };
 
 export default CartContextProvider;

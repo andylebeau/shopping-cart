@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { formatCurrency } from '../utilities/formatCurrency';
 import { ProductInput } from './ProductInput';
 import CartContext from './CartContext';
+import { PropTypes } from 'prop-types';
 
 export const CartItem = ({ product, quantity }) => {
   const { shoppingCart, setShoppingCart } = useContext(CartContext);
@@ -29,4 +30,9 @@ export const CartItem = ({ product, quantity }) => {
       <hr />
     </>
   );
+};
+
+CartItem.propTypes = {
+  product: PropTypes.object.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
