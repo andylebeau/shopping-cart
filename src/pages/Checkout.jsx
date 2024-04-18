@@ -9,6 +9,13 @@ export const Checkout = () => {
   const { products, shoppingCart, cartCount, getCartTotal } =
     useContext(CartContext);
   const cartTotal = formatCurrency(getCartTotal());
+
+  const handlePurchase = () => {
+    alert(
+      'Mirage hopes your imaginary shopping spree was theraputic! Come back anytime!'
+    );
+    location.href = '/';
+  };
   return (
     <>
       <div className="sub-header">
@@ -33,10 +40,12 @@ export const Checkout = () => {
             <div className="cart-total">TOTAL: {cartTotal}</div>
             <div className="action-btns-container">
               <div className="action-btns">
-                <button className="action-btn">Checkout</button>
+                <button className="action-btn" onClick={handlePurchase}>
+                  Checkout Now!
+                </button>
                 <Link to="/shop">
                   <button type="button" className="action-btn">
-                    Keep Shopping
+                    Back to Shopping
                   </button>
                 </Link>
               </div>
